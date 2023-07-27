@@ -7,8 +7,8 @@ const [action, setAction] = createSignal("");
 const handleOpen = () => setShow(true);
 const handleClose = () => setShow(false);
 const handleSubmit = () => {
-  setShow(false);
   setAction("alert");
+  setShow(false);
 };
 
 const Popup = (props: any) => {
@@ -37,7 +37,7 @@ const Popup = (props: any) => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>

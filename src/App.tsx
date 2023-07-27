@@ -3,7 +3,6 @@ import "./App.css";
 import Popup, { action, name, setAction, setName } from "./components/Popup";
 
 function App() {
-  const [count, setCount] = createSignal(0);
   createEffect(() => {
     if (action() == "alert") {
       alert("Hello, " + name());
@@ -15,7 +14,6 @@ function App() {
     <>
       <h1>Popup Example</h1>
       <Popup></Popup>
-      {"Hello, " + name()}
     </>
   );
 }
