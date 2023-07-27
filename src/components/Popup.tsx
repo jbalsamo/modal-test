@@ -2,11 +2,13 @@ import { Button, Modal } from "solid-bootstrap";
 import { createSignal } from "solid-js";
 
 const [show, setShow] = createSignal(false);
-const [name, setName] = createSignal({ name: "", action: "" });
+const [name, setName] = createSignal("");
+const [action, setAction] = createSignal("");
 const handleOpen = () => setShow(true);
 const handleClose = () => setShow(false);
 const handleSubmit = () => {
   setShow(false);
+  setAction("alert");
 };
 
 const Popup = (props: any) => {
@@ -24,9 +26,7 @@ const Popup = (props: any) => {
           <div>
             <label>Name:</label>
             <input
-              onChange={(e) =>
-                setName({ name: e.target.value, action: "alert" })
-              }
+              onChange={(e) => setName(e.target.value)}
               type="text"
               name="Name"
               placeholder="Full Name"
@@ -47,4 +47,4 @@ const Popup = (props: any) => {
 };
 
 export default Popup;
-export { name, setName };
+export { action, name, setAction, setName };
